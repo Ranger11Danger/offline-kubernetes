@@ -1,0 +1,9 @@
+---
+- name: Copy k3s onto nodes
+  copy:
+    src: ./downloads/k3s
+    dest: /usr/local/bin/k3s
+    owner: root
+    group: root
+    mode: 0755
+  when: ansible_facts.architecture == "x86_64"

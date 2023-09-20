@@ -1,0 +1,24 @@
+mirrors:
+  "<offline repo>":
+    endpoint:
+      - "http://<offline repo>"
+  docker.io:
+    endpoint:
+      - "http://<offline repo>"
+    rewrite:
+      "(.*)": "dockerhub-proxy/$1"
+  ghcr.io:
+      endpoint:
+        - "http://<offline repo>"
+      rewrite:
+        "(.*)": "ghcr-proxy/$1"
+  quay.io:
+      endpoint:
+        - "http://<offline repo>"
+      rewrite:
+        "(.*)": "quay-proxy/$1"
+configs:
+  "<offline repo>":
+    auth:
+      username: "<username>"
+      password: "<password>"
